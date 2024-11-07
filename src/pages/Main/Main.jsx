@@ -1,5 +1,6 @@
 import { useDebounce } from '../../helpers/hooks/useDebounce';
-import NewsBanner from '../../components/NewsBanner/NewsBanner';
+import LatestNews from '../../components/LatestNews/LatestNews';
+import BannersList from '../../components/BannersList/BannersList';
 import NewsList from '../../components/NewsList/NewsList';
 import styles from './Main.module.css';
 import { getCategories, getNews } from '../../api/apiNews';
@@ -45,6 +46,7 @@ const Main = () => {
 
   return (
     <main className={styles.main}>
+      <LatestNews isLoading={isLoading} banners={data && data.news} />
       {dataCategories ? (
         <Categories
           categories={dataCategories.categories}
@@ -53,12 +55,15 @@ const Main = () => {
         />
       ) : null}
 
-      <Search keywords={filters.keywords} setKeywords={(keywords) => changeFilter('keywords', keywords)} />
+      <Search
+        keywords={filters.keywords}
+        setKeywords={(keywords) => changeFilter('keywords', keywords)}
+      />
 
-      <NewsBanner
+      {/* <NewsBanner
         isLoading={isLoading}
         item={data && data.news && data.news[0]}
-      />
+      /> */}
 
       <Pagination
         handleNextPage={handleNextPage}
