@@ -5,6 +5,14 @@
   background-color: #ffffff;
 }
 
+.light {
+  background-color: #ffffff;
+}
+
+.dark {
+  background-color: #23272f;
+}
+
 .input {
   width: 100%;
   border: 1px solid #f2f3f5;
