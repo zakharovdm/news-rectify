@@ -6,8 +6,7 @@ const Main = () => {
   return (
     <main className={styles.main}>
       <LatestNews />
-      
-      <NewsByFilter/>
+      <NewsByFilter />
     </main>
   );
 };
