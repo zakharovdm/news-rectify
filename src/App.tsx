@@ -3,13 +3,13 @@ import { useTheme } from './context/ThemeContext';
 import Main from './pages/Main/Main';
 
 function App() {
-  const {isDark, toggleTheme} = useTheme();
-
+  const {isDark } = useTheme();
+ 
   return (
       <div className={`app ${isDark ? 'dark' : 'light'}`}>
         <Header />
         <div className="container">
-          <Main isDark={isDark} />
+          <Main />
         </div>
       </div>
   );
